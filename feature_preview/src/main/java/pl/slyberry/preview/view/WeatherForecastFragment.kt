@@ -31,7 +31,7 @@ class WeatherForecastFragment : Fragment() {
 
     viewModel.viewEntity.observe(viewLifecycleOwner, Observer {
       when (it) {
-        LoadingViewEntity -> applyLoadingViewEntity()
+        LoadingViewEntity -> applyLoadingViewEntity(adapter)
         is SuccessViewEntity -> applySuccessViewEntity(it, adapter)
         ErrorViewEntity -> applyErrorViewEntity()
       }.exhaustive
@@ -46,9 +46,10 @@ class WeatherForecastFragment : Fragment() {
     viewModel.query(input_text.text.toString())
   }
 
-  private fun applyLoadingViewEntity() {
+  private fun applyLoadingViewEntity(adapter: WeatherForecastAdapter) {
     progress_bar.makeVisible()
     input_text_layout.error = null
+    adapter.items = emptyList()
   }
 
   private fun applySuccessViewEntity(viewEntity: SuccessViewEntity, adapter: WeatherForecastAdapter) {
