@@ -1,7 +1,5 @@
 package pl.slyberry.remote.main
 
-import org.threeten.bp.Instant
-import org.threeten.bp.OffsetDateTime
 import org.threeten.bp.ZoneId
 import pl.slyberry.domain.*
 import pl.slyberry.domain.City
@@ -13,12 +11,12 @@ fun ForecastJson.toDomain(): Forecast {
     City(city.name),
     weatherList.map {
       DailyWeather(
-        OffsetDateTime.ofInstant(Instant.ofEpochMilli(it.date), ZONE_ID),
-        CelsiusTemp(it.temp.day),
-        CelsiusTemp(it.temp.min),
-        CelsiusTemp(it.temp.max),
-        Pressure(it.pressure),
-        Humidity(it.humidity)
+        it.date,
+        KelvinTemp(it.main.day),
+        KelvinTemp(it.main.min),
+        KelvinTemp(it.main.max),
+        Pressure(it.main.pressure),
+        Humidity(it.main.humidity)
       )
     }
   )

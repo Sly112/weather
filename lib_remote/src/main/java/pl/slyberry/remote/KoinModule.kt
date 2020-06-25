@@ -24,7 +24,7 @@ private fun provideRetrofitClient(): Retrofit {
   val httpClient = OkHttpClient.Builder().addInterceptor(loggingInterceptor).build()
 
   return Retrofit.Builder()
-    .baseUrl("https://openweathermap.org/")
+    .baseUrl("https://api.openweathermap.org/")
     .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
     .addConverterFactory(MoshiConverterFactory.create())
     .client(httpClient)

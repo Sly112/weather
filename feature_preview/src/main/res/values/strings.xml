@@ -3,4 +3,7 @@
     <string name="provide_city_name">Provide city name…</string>
     <string name="check">Check</string>
     <string name="no_data_error">There is no data for provided city name.</string>
+    <string name="temp">Average temp: %s°C</string>
+    <string name="humidity">Humidity: %s%%</string>
+    <string name="pressure">Pressure: %s</string>
 </resources>

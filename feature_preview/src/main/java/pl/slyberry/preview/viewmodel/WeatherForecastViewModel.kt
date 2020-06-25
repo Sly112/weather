@@ -20,7 +20,10 @@ class WeatherForecastViewModel(private val useCase: GetForecastUseCase) : Dispos
         viewEntity.value = when (it) {
           is LoadingResult -> LoadingViewEntity
           is SuccessResult -> it.data.toViewEntity()
-          is ErrorResult -> ErrorViewEntity
+          is ErrorResult -> {
+            it.error.printStackTrace()
+            ErrorViewEntity
+          }
         }
       }.let { addDisposable(it) }
   }

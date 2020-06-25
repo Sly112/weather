@@ -14,6 +14,7 @@ dependencies {
 
     implementKoin()
 
+    implementation(Dependencies.DATE)
     implementation(Dependencies.RX_ANDROID)
     implementation(Dependencies.RX_JAVA)
     implementation(Dependencies.MATERIAL)

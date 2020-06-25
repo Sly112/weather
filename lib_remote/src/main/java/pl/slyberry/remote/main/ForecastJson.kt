@@ -16,26 +16,26 @@ data class CityJson(
 )
 
 data class DailyWeatherJson(
-  @field:Json(name = "dt")
-  val date: Long,
+  @field:Json(name = "dt_txt")
+  val date: String,
 
+  @field:Json(name = "main")
+  val main: MainJson
+)
+
+data class MainJson(
   @field:Json(name = "temp")
-  val temp: TempJson,
+  val day: Float,
+
+  @field:Json(name = "temp_min")
+  val min: Float,
 
   @field:Json(name = "pressure")
   val pressure: Float,
 
+  @field:Json(name = "temp_max")
+  val max: Float,
+
   @field:Json(name = "humidity")
   val humidity: Int
-)
-
-data class TempJson(
-  @field:Json(name = "day")
-  val day: Float,
-
-  @field:Json(name = "min")
-  val min: Float,
-
-  @field:Json(name = "max")
-  val max: Float
 )
