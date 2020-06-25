@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="provide_city_name">Provide city name…</string>
+    <string name="check">Check</string>
+    <string name="no_data_error">There is no data for provided city name.</string>
+</resources>
